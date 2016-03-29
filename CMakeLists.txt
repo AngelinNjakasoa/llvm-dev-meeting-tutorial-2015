@@ -38,6 +38,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_subdirectory(Utils)
 add_subdirectory(MBA)
+add_subdirectory(XorZero)
 add_subdirectory(ReachableIntegerValues)
 add_subdirectory(DuplicateBB)
 
@@ -57,5 +58,5 @@ endif()
 add_custom_target(check
     COMMAND ${PYTHON_EXECUTABLE} -m lit.main
             "${CMAKE_CURRENT_BINARY_DIR}/Tests" -v
-    DEPENDS LLVMMBA LLVMReachableIntegerValues LLVMDuplicateBB
+    DEPENDS LLVMMBA LLVMReachableIntegerValues LLVMDuplicateBB LLVMXorZero
 )
